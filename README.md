@@ -27,10 +27,10 @@ Depois do `git clone`, entre na pasta do projeto e instale as dependências:
 
 ```bash
 cd API-trabalho-PWIII
-npm ci
+npm install
 ```
 
-Se você já tinha clonado o repositório antes do envio do projeto, execute `git pull origin main` dentro da pasta antes de `npm ci`.
+Se você já tinha clonado o repositório antes do envio do projeto, execute `git pull origin main` dentro da pasta antes de `npm install`.
 
 Crie o `.env` a partir do modelo. No **Windows (PowerShell)**:
 
@@ -51,21 +51,17 @@ Preencha a linha abaixo no `.env` com sua chave do painel da API-Sports e salve 
 API_SPORTS_KEY=coloque_sua_chave_aqui
 ```
 
-O `.env` é ignorado pelo Git; por isso, você precisa preenchê-lo no computador onde vai executar a aplicação. Depois de trocar a chave, reinicie o servidor. Na nuvem, a variável pode ser injetada pelos segredos do ambiente, sem criar `.env`. Não use `VITE_API_SPORTS_KEY`: variáveis com `VITE_` ficam acessíveis no navegador.
+O `.env` é ignorado pelo Git; por isso, você precisa preenchê-lo uma vez no computador onde vai executar a aplicação. Depois de trocar a chave, reinicie `npm run dev`. Na nuvem, a variável pode ser injetada pelos segredos do ambiente, sem criar `.env`. Não use `VITE_API_SPORTS_KEY`: variáveis com `VITE_` ficam acessíveis no navegador.
 
-Em um terminal:
-
-```bash
-npm run server
-```
-
-Em outro terminal, também dentro da pasta do projeto:
+Com o `.env` configurado, inicie tudo em **um único terminal**:
 
 ```bash
 npm run dev
 ```
 
-Abra o endereço informado pelo Vite, normalmente `http://localhost:5173`. Mantenha os dois terminais em execução; use `Ctrl+C` para encerrar cada processo.
+O comando inicia o servidor da API e o React juntos. Abra o endereço informado pelo Vite, normalmente `http://localhost:5173`. Mantenha esse terminal em execução e use `Ctrl+C` para encerrar os dois processos. Se um deles parar por erro, o outro também será encerrado.
+
+Se você estava usando a versão com dois terminais, encerre os processos antigos com `Ctrl+C` antes de usar o novo comando, para liberar as portas.
 
 O Vite encaminha as chamadas `/api` ao servidor na porta 3001. O servidor usa `x-apisports-key` para consultar exclusivamente `https://v1.basketball.api-sports.io`.
 
