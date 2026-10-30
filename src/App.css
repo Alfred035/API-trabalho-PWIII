@@ -1,0 +1,65 @@
+.cabecalho { background: #172338; color: white; border-bottom: 4px solid #ea580c; }
+.cabecalho-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-block: 1.2rem;
+}
+.marca { color: white; text-decoration: none; font-size: 1.4rem; font-weight: bold; }
+.marca-bola { color: #fb923c; margin-right: .5rem; }
+.cabecalho-descricao { color: #d1d5db; font-size: .9rem; }
+main { padding-block: 2.5rem; min-height: calc(100vh - 160px); }
+.apresentacao { margin-bottom: 1.75rem; }
+.categoria { color: #9a3412; letter-spacing: .12em; font-size: .75rem; font-weight: bold; }
+h1 { margin: .4rem 0; font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15; color: #172338; }
+.apresentacao > p:last-child { color: #4b5563; }
+.filtros {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.2fr auto;
+    align-items: end;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid #d1d5db;
+    border-radius: .75rem;
+}
+.campo { min-width: 0; }
+.campo label { display: block; margin-bottom: .5rem; font-weight: bold; font-size: .9rem; }
+.ajuda-filtros { grid-column: 1 / -1; margin: 0; font-size: .85rem; color: #4b5563; }
+.resultados { margin-top: 2rem; }
+.titulo-resultados { font-size: 1.25rem; color: #172338; }
+.titulo-resultados span { margin-left: .5rem; font-size: 1rem; color: #6b7280; }
+.grade-jogos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 310px), 1fr));
+    gap: 1rem;
+}
+.jogo-card { background: white; border: 1px solid #d1d5db; border-radius: .75rem; overflow: hidden; overflow-wrap: anywhere; }
+.jogo-cabecalho, .jogo-rodape { display: flex; justify-content: space-between; align-items: center; gap: .75rem; padding: 1rem; }
+.jogo-cabecalho { border-bottom: 1px solid #e5e7eb; font-weight: bold; font-size: .85rem; }
+.status { font-weight: normal; font-size: .75rem; background: #f3f4f6; padding: .25rem .5rem; border-radius: .25rem; }
+.status-ao-vivo { color: #166534; background: #dcfce7; }
+.placar { display: grid; gap: 1rem; padding: 1.25rem 1rem; }
+.time { display: flex; align-items: center; gap: .75rem; min-height: 40px; }
+.time-logo { width: 36px; height: 36px; object-fit: contain; }
+.pontos { margin-left: auto; padding-left: .5rem; font-size: 1.5rem; color: #172338; }
+.jogo-rodape { background: #fafaf9; color: #4b5563; font-size: .75rem; flex-wrap: wrap; }
+.estado-vazio { text-align: center; padding: 3rem 1rem; border: 1px dashed #9ca3af; border-radius: .75rem; color: #4b5563; }
+.estado-vazio h2 { font-size: 1.15rem; color: #172338; }
+.aviso { padding: 1rem; margin-bottom: 1rem; background: #fff7ed; border: 1px solid #c2410c; border-radius: .5rem; }
+.aviso p { margin-top: 0; }
+.botao-secundario { background: white; color: #9a3412; }
+.botao-secundario:hover:not(:disabled) { background: #ffedd5; }
+.rodape { border-top: 1px solid #d1d5db; padding-block: 1.25rem; font-size: .8rem; color: #4b5563; }
+
+@media (max-width: 800px) {
+    .filtros { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+    main { padding-block: 1.5rem; }
+    .filtros { grid-template-columns: 1fr; padding: 1rem; }
+    .cabecalho-descricao { font-size: .8rem; }
+}
